@@ -37,10 +37,10 @@ const pdf = PDF.fromPath('./my-document.html', {
 
 pdf.store("./myFile.pdf"); // will store a pdf file
 
-pdf.toBase64() // Will generate base64 string
+pdf.toBase64() // "JVBERi0...UlRU9GCg=="
 ```
 
 To generate the base 64 pdf:
 ```js
-`data:application/pdf;base64, ${(await pdf.toBase64())}`
+`data:application/pdf;base64, ${(await pdf.toBase64())}` // "data:application/pdf;base64, JVBERi0...UlRU9GCg=="
 ```

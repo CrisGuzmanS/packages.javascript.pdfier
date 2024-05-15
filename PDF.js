@@ -84,6 +84,4 @@ class PDF {
     }
 }
 
-module.exports = {
-    PDF
-}
+module.exports = PDF

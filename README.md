@@ -29,17 +29,18 @@ Create your html file:
 ```
 
 ```js
-const { PDF } = require("@spi/pdf");
+const { PDF } = require("pdfier");
 
-const file = './my-document.html'
-
-const pdf = PDF.fromPath(file, {
+const pdf = PDF.fromPath('./my-document.html', {
     myVariable: 'Amazing file'
 });
 
-const pathToStore = "./myFile.pdf"
-
-pdf.store(pathToStore); // will store a pdf file
+pdf.store("./myFile.pdf"); // will store a pdf file
 
 pdf.toBase64() // Will generate base64 string
+```
+
+To generate the base 64 pdf:
+```js
+`data:application/pdf;base64, ${(await pdf.toBase64())}`
 ```
